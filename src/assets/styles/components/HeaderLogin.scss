@@ -1,0 +1,35 @@
+.header__login{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(255, 255, 255);
+    height: 12vh;
+}
+
+.ancla > a{
+    text-decoration: none;
+    color: rgb(52, 129, 113);
+    list-style-type: none;
+}
+
+.ancla a:hover{
+    color: darkslategrey;
+}
+
+.header__login--left{
+    @extend .ancla;
+    padding: 15px 20px;
+    text-align: left;
+}
+
+.header__login--right{
+    text-align: center;
+}
+
+.header__list > li{
+    @extend .ancla;
+    display: inline-block;
+    font-size: 16px;
+    padding: 15px;
+}

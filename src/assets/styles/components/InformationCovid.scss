@@ -1,0 +1,28 @@
+.ancla a{
+    text-decoration: none;
+    color: cornsilk;
+    list-style-type: none;
+    border: 1px white solid;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.ancla a:hover{
+    color: #1473e6;
+    background-color: white;
+}
+
+.information{
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    background-color: #1473e6;
+}
+
+.information__text > p{
+    @extend .ancla;
+    margin: 0;
+    padding: 15px 0;
+    //color: #21252b, #693ab8, #00ad9e;
+}
+

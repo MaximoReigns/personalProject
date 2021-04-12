@@ -1,26 +1,17 @@
 const path = require('path')
 const HtmlWebPackPlugin= require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
-module.exports={
+module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: "/"
     },
-    mode: 'production',
+    mode: 'development',
     resolve:{
         extensions: ['.js', '.jsx'],
-        alias: {
-            '@components' : path.resolve(__dirname,'src/components/'),
-            '@styles': path.resolve(__dirname, 'src/assets/styles/'),
-            '@static': path.resolve(__dirname, 'src/assets/static/')
-        }
     },
     module:{
         rules:[
@@ -48,17 +39,16 @@ module.exports={
                 ]
             },
             {
-                test: /\.(png|jpg|jpeg|gif|svg)$/,
-                use: [
-                    {
-                        'loader': 'file-loader',
-                        options: {
-                            name: 'assets/[hash].ext'
-                        }
-                    }
-                ]
+                test: /\.jpg|png|jpeg|gif|svg/,
+                type: 'asset/resource'
             }
         ]
+    },
+    devServer: {
+        historyApiFallback: true,
+        contentBase: path.join(__dirname, 'dist'),
+        compress:true,
+        port: 8081
     },
     plugins:[
         new HtmlWebPackPlugin({
@@ -69,13 +59,13 @@ module.exports={
         new MiniCssExtractPlugin({
             filename: 'assets/[name].css',
         }),
-        new CleanWebpackPlugin(),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, "src", "assets/static"),
+                    to: "assets/static"
+                }
+            ]
+        })
     ],
-    optimization: {
-        minimize: true,
-        minimizer: [
-            new CssMinimizerPlugin(),
-            new TerserPlugin()
-        ]
-    }
 };

@@ -1,0 +1,17 @@
+.special{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+    box-sizing: border-box;
+}
+
+.special__items--box > p{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #49ab9c;
+}
+
+.special__items--box > p > img{
+    vertical-align: middle;
+}

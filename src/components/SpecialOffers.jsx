@@ -5,14 +5,10 @@ import '../assets/styles/components/SpecialOffers.scss';
 
 import Summer from '../assets/static/summer-70-off.png';
 import TimeToTravel from '../assets/static/time-to-travel.png';
-import atention from '../assets/static/icons/atention.png';
 import card from '../assets/static/icons/card.png';
 import guarantee from '../assets/static/icons/guarantee.png';
-import info from '../assets/static/icons/info.png';
-import quick from '../assets/static/icons/quick.png';
 import safe from '../assets/static/icons/safe.png';
 import save from '../assets/static/icons/save.png';
-import wallet from '../assets/static/icons/wallet.png';
 
 
 const SpecialOffers = () =>(

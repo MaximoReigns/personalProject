@@ -1,23 +1,62 @@
-.special{
-    display: flex;
+.special {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  background-image: url(../../static/time-to-travel.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  border-radius: 10px;
+  margin: 10px;
+  /*display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;*/
+  //background-color: white;
+}
+
+.special__promo {
+  margin: 0 5px;
+  font-size: 18px;
+  color: white;
+  text-shadow: 2px 2px 3px rgb(0 0 0 / 70%);
+}
+
+.special__info > p {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #49ab9c;
+}
+
+.special__info > p > img {
+  vertical-align: middle;
+}
+//@media (max-width: 600px)
+@media (max-width: 600px) {
+  .special {
+    display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
-    box-sizing: border-box;
-}
+    background-image: none;
+    background-color: white;
+  }
+  .special > * {
+    order: 0;
+  }
 
-.special__items--box,
-.special__items--2,
-.special__items--3{
-    margin: 0 5px;
-}
+  .special__promo {
+    order: 2;
+  }
 
-.special__items--box > p{
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-    color: #49ab9c;
-}
+  .special__info {
+    order: 1;
+  }
 
-.special__items--box > p > img {
-    vertical-align: middle;
+  .special__info,
+  .special__promo {
+    font-size: 12px;
+  }
 }

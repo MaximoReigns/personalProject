@@ -1,12 +1,53 @@
-.main{
-    background-image: url(../../static/main.jpg);
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 60vh;
+.main {
+  background-image: linear-gradient(
+      rgba(49, 48, 48, 0.5),
+      rgba(48, 48, 48, 0.5)
+    ),
+    url(../../static/hoteles-home-abril-2021-min.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+  border: 1px solid white;
 }
 
-h1 {
-    margin: 0;
-    padding: 0
+.main__item {
+  display: grid;
+  gap: 1rem;
+  //grid-auto-rows: 22rem;
+  //grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  place-items: center;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 26px;
+  text-shadow: 2px 2px 3px rgb(0 0 0 / 70%);
+}
+
+.main__item > em {
+  font-size: 23px;
+  margin-top: -25px;
+}
+
+.main__text > a {
+  background-color: rgb(155, 35, 35);
+  color: white;
+  border-radius: 8px;
+  width: 25%;
+  text-align: center;
+  font-size: 20px;
+  text-decoration: none;
+}
+.main__text > a:hover {
+  color: rgb(155, 35, 35);
+  background-color: white;
+}
+
+@media (max-width: 600px) {
+  .main {
+    text-align: center;
+  }
 }
